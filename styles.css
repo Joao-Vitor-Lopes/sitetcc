@@ -1,0 +1,186 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #224C8D;
+    padding: 0;
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo img {
+    width: 10%; /* Ajuste conforme necessário */
+}
+
+h1 {
+    margin: 0;
+    font-size: 3vw; /* Utilizando vw para tamanho de fonte responsivo */
+}
+
+h2, h3 {
+    color: #6DB5E7;
+}
+
+p {
+    line-height: 1.5;
+}
+
+.game-section, .decision-section, .knowledge-map-section {
+    margin: 5% 0;
+    background-color: #fff;
+    padding: 5%;
+    border-radius: 2%;
+    box-shadow: 0 1% 2% rgba(0, 0, 0, 0.1);
+}
+
+.forum {
+    background-color: #f9f9f9;
+    padding: 2%;
+    margin-top: 2%;
+    border-radius: 1%;
+}
+
+.social-media {
+    margin-top: 2%;
+}
+
+button {
+    background-color: #ff9900;
+    color: #fff;
+    padding: 1% 2%;
+    border: none;
+    border-radius: 1%;
+    margin-right: 2%;
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    margin-top: 5%;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --blue: #0099ff;
+    --winning-blocks: #b9009a;
+  }
+  
+  body {
+    color: var(--blue);
+    font-family: "Finger Paint", cursive;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: #fff;
+  }
+  
+  .container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #00153b;
+  }
+  
+  #gameboard {
+    width: min(95%, 300px);
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 40px;
+  }
+  
+  #scoreboard {
+    margin-top: 40px;
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    color: #fff;
+    width: min(95%, 200px);
+    max-width: 100%;
+  }
+  
+  #difficulty-board {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #difficulty-board select {
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    margin-left: 10px;
+  }
+  
+  .box {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    font-size: 120px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+  }
+  
+  .box:nth-child(3n) {
+    border-right: none;
+  }
+  
+  .box:nth-child(6) ~ .box {
+    border-bottom: none;
+  }
+  
+  button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+    font-size: 1.2rem;
+    transition: 200ms transform;
+    font-weight: 600;
+    margin-top: 20px;
+  }
+  
+  .mode-btn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+    font-size: 1.2rem;
+    transition: 200ms transform;
+    font-weight: 600;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  
+  button:hover {
+    cursor: pointer;
+    transform: translateY(-2px);
+  }
+  

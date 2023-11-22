@@ -1,7 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+ 
     background-color: #f4f4f4;
 }
 
@@ -21,12 +20,12 @@ header {
 }
 
 .logo img {
-    width: 10%; /* Ajuste conforme necessário */
+    width: 10%; 
 }
 
 h1 {
     margin: 0;
-    font-size: 3vw; /* Utilizando vw para tamanho de fonte responsivo */
+    font-size: 3vw;
 }
 
 h2, h3 {
@@ -78,7 +77,7 @@ footer {
   }
   
   :root {
-    --blue: #0099ff;
+    --blue: #6DB5E7;
     --winning-blocks: #83E509;
   }
   
@@ -164,6 +163,7 @@ footer {
     transition: 200ms transform;
     font-weight: 600;
     margin-top: 20px;
+ 
   }
   
   .mode-btn {
@@ -187,4 +187,9 @@ footer {
 .explicacao{
 
   color: #000000;
+}
+
+#restartBtn{
+
+  margin-left: 2%;
 }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>IA Explora</title>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="IA Explora Logo">
+            
+        </div>
+        <h1>IA Explora</h1>
+       <b> <p>Explore o mundo da inteligência artificial</p></b>
+    </header>
+
+
+
+    <section class="decision-section">
+        <h2>Tomada de Decisão Coletiva</h2>
+        <p>Apresentação de um caso prático de tomada de decisão em IA...</p>
+        <!-- Adicione aqui a enquete interativa -->
+    </section>
+
+    <section class="knowledge-map-section">
+        <h2>Mapa de Conhecimento Colaborativo</h2>
+        <p>Destaque de tópicos importantes em IA...</p>
+        <!-- Adicione aqui o mapa interativo -->
+    </section>
+    <section class="game-section">
+      <h2>Desafio de IA</h2>
+      <p>Breve explicação sobre o jogo...</p><br>
+          <p class="explicacao"> ipsum dolor sit amet consectetur adipisicing elit. Delectus dicta culpa, numquam officiis dolorem, earum ipsam doloremque itaque, ex quibusdam aspernatur corrupti porro aliquid consequuntur consequatur sequi debitis fugiat dolorum!</p>
+      <div class="forum">
+        <h3>Fórum do Jogo</h3>
+        <div class="container">
+          <h1 id="playerText">JOGO DA VELHA</h1>
+            <a  class="mode-btn">DESAFIE A IA</a>
+            <button id="restartBtn">Restart</button>
+      
+          
+                <div id="gameboard">
+                  <div class="box" id="0"></div>
+                  <div class="box" id="1"></div>
+                  <div class="box" id="2"></div>
+                  <div class="box" id="3"></div>
+                  <div class="box" id="4"></div>
+                  <div class="box" id="5"></div>
+                  <div class="box" id="6"></div>
+                  <div class="box" id="7"></div>
+                  <div class="box" id="8"></div>
+                </div>
+          
+                <div id="scoreboard">
+                  <p>X - <span id="x-points">0</span></p>
+                  <p>VS</p>
+                  <p>O - <span id="o-points">0</span></p>
+                </div>
+          
+                <div id="difficulty-board">
+                  <p>Nível: </p>
+                  <select id="difficulty-select">
+                    <option value="1">Fácil</option>
+                    <option value="2">Médio</option>
+                    <option value="3">Difícil</option>
+                  </select>
+                </div>
+        </div>
+            
+              
+      </div>
+         
+                <script type="module" src="one-player.js"></script>
+              
+              
+  </section>
+    <footer>
+
+        <p>&copy; TCC 2023 IA</p>
+    </footer>
+
+</body>
+</html>
+

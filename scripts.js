@@ -2,9 +2,10 @@ import Computer from "./computer.js";
 
 const playerText = document.getElementById("playerText");
 const restartBtn = document.getElementById("restartBtn");
-const boxes = Array.from (document.getElementsByClassName("box"));
+const boxes = Array.from(document.getElementsByClassName("box"));
 const winningIndicator = getComputedStyle(document.body).getPropertyValue("--winning-blocks"
 );
+
     const xPointsText = document.getElementById("x-points");
     const oPointsText = document.getElementById("o-points");
     const levelSelect = document.getElementById("difficulty-select")
@@ -17,6 +18,7 @@ const X_TEXT = "X";
 let currentPlayer = X_TEXT;
 let spaces = Array(9).fill(null);
 let level = 1;
+const computer = new Computer();
 
 levelSelect.addEventListener('change', (e) =>{
     
@@ -53,8 +55,8 @@ function boxClicked(e) {
         }
 
         currentPlayer = currentPlayer === X_TEXT ? O_TEXT : X_TEXT;
-        if(currentPlayer === O_TEXT){
-       Computer.play(spaces, boxes, level);
+        if(currentPlayer === O_TEXT && getRemainingSpaces().length){
+       computer.play(spaces, boxes, level);
         }
     }
 }
@@ -83,18 +85,24 @@ function playerHasWon(){
     return false;
 }
 
-function isDraw(){
-      for(let i = 0; i < spaces.length; i++){
-        if(spaces[i] === null) return false;
-      }
-      return true
-}
+
 
 function addPointsToWinner(){
     if(currentPlayer === X_TEXT)
     xPointsText.innerText = Number(xPointsText.innerText) + 1;
 else    oPointsText.innerText = Number(xPointsText.innerText) + 1;
 
+}
+
+function isDraw(){
+    for(let i = 0; i < spaces.length; i++){
+      if(spaces[i] === null) return false;
+    }
+    return true
+}
+
+function getRemainingSpaces(){
+    return spaces.filter((space) => !space);
 }
 
 restartBtn.addEventListener("click", restart);

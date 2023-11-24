@@ -8,14 +8,20 @@ export default class Computer{
                 this.playInEasyLevel(spaces, boxes);
                 break;
             case 2:
-                
+                this.playInMiddleLevel(spaces, boxes);
             default:
         }
     }
 
     playInEasyLevel(spaces, boxes) {
-        boxes[this.getRandomAvailableSpace(spaces)].click()
+        boxes[this.getRandomAvailableSpace(spaces)].click();
         
+    }
+
+    playInMiddleLevel(spaces, boxes){
+        if(this.getRandomAvailableSpace(spaces).length === 9){
+            boxes[this.getRandomAvailableSpace(spaces)].click();
+        }
     }
 
     getRandomAvailableSpace(spaces){
@@ -29,4 +35,6 @@ export default class Computer{
     
        return availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
     }
+
+
 }

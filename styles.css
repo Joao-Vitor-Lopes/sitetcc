@@ -5,13 +5,16 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #fff;
     color: #224C8D;
     padding: 0;
     text-align: center;
-    border-bottom: 1px solid #555;
+    border-bottom: 3px solid #224C8D;
+    
 }
-
+header h1{
+  color: #224C8D;
+}
 
 .logo {
     display: flex;

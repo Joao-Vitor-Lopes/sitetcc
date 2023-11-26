@@ -22,9 +22,10 @@ class Computer{
                 break;
             case 2:
                 this.playInMiddleLevel(spaces, boxes);
-                break;
+               
             default:
                 this.playInHardLevel(spaces, boxes);
+                
         }
     }
 

@@ -31,7 +31,8 @@ class Computer{
     }
 
     playInMiddleLevel(spaces, boxes) {
-        if(this.getRandomAvailableSpace(spaces).length === 9){
+        console.log(jogou);
+        if(this.getRemainingSpaces(spaces).length === 9){
             boxes[this.getRandomAvailableSpace(spaces)].click();
         } else if(this.getRandomAvailableSpace(spaces).length === 8){
             if (!spaces[4]) return boxes[4].click();
@@ -53,7 +54,7 @@ class Computer{
        return availableSpaces[Math.floor(Math.random() * availableSpaces.length)];
     }
     getRemainingSpaces(spaces) {
-        return spaces.filter((space) => !space)
+        return spaces.filter((space) => !space);
     }
 
     getSpaceToWin(spaces){
@@ -91,14 +92,14 @@ let spaces = Array(9).fill(null);
 let level = 1;
 const computer = new Computer();
 
-levelSelect.addEventListener('change', (e) => {
+levelSelect.addEventListener("change", (e) => {
     
     level = Number(e.target.value);
-    console.log(level);
+    
 });
 
 const startGame = () => {
-    console.log("chegou")
+    
     let teste = boxes.forEach((box) => box.addEventListener("click", boxClicked));
 };
 

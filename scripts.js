@@ -22,7 +22,9 @@ class Computer{
                 break;
             case 2:
                 this.playInMiddleLevel(spaces, boxes);
+                break;
             default:
+                this.playInHardLevel(spaces, boxes);
         }
     }
 
@@ -31,15 +33,39 @@ class Computer{
     }
 
     playInMiddleLevel(spaces, boxes) {
-        console.log(jogou);
+        
         if(this.getRemainingSpaces(spaces).length === 9){
             boxes[this.getRandomAvailableSpace(spaces)].click();
-        } else if(this.getRandomAvailableSpace(spaces).length === 8){
+        } else if(this.getRemainingSpaces(spaces).length === 8){
             if (!spaces[4]) return boxes[4].click();
             boxes[this.getRandomAvailableSpace(spaces)].click();
         } else if(this.getSpaceToWin(spaces)){
            boxes[this.getSpaceToWin(spaces)].click();
+        } else if(this.getBlockingSpace(spaces)) {
+            boxes[this.getBlockingSpace(spaces)].click();
+        } else {
+            boxes[this.getRandomAvailableSpace(spaces)].click();
         }
+        
+        
+    }
+
+    playInHardLevel(spaces, boxes){
+        if(this.getRemainingSpaces(spaces).length === 9){
+            boxes[4].click();
+        } else if(this.getRemainingSpaces(spaces).length === 8){
+            if (!spaces[4]) return boxes[4].click();
+            boxes[this.getRandomCorner()].click();
+        } else if(this.getSpaceToWin(spaces)){
+           boxes[this.getSpaceToWin(spaces)].click();
+        } else if(this.getBlockingSpace(spaces)) {
+            boxes[this.getBlockingSpace(spaces)].click();
+        } else if(this.getSpaceToCreateChance(spaces)){
+            boxes[this.getSpaceToCreateChance(spaces)].click();
+        } else {
+            boxes[this.getRandomAvailableSpace(spaces)].click();
+        }
+        
     }
 
     getRandomAvailableSpace(spaces){
@@ -61,9 +87,37 @@ class Computer{
         for(const combo of this.winningCombos){
             const [a, b, c] = combo;
     
-            if(spaces[a] === "O" && spaces[b] === "O" && !spaces[c]) return c;
-            else if (spaces[a] === "O" && spaces[c] === "O" && !spaces[b]) return b;
-            else if(spaces[b] === "O" && spaces[c] === "O" && !spaces[a]) return a;
+            if(spaces[a] === "O" && spaces[b] === "O" && spaces[c] === null) return c;
+            else if (spaces[a] === "O" && spaces[c] === "O" && spaces[b] === null) return b;
+            else if(spaces[b] === "O" && spaces[c] === "O" && spaces[a] === null) return a;
+            
+            }
+        return null;
+    }
+
+    getBlockingSpace(spaces){
+        for(const combo of this.winningCombos){
+            const [a, b, c] = combo;
+            
+            if(spaces[a] === "X" && spaces[b] === "X" && spaces[c] === null) return c;
+            else if (spaces[a] === "X" && spaces[c] === "X" && spaces[b] === null) return b;
+            else if(spaces[b] === "X" && spaces[c] === "X" && spaces[a] === null) return a;
+            
+            }
+        return null;
+    }
+    getRandomCorner(){
+        const corners = [0, 2, 6, 8];
+        return corners[Math.floor(Math.random() * corners.length)];
+    }
+
+    getSpaceToCreateChance(spaces){
+        for(const combo of this.winningCombos){
+            const [a, b, c] = combo;
+    
+            if(!spaces[a] && !spaces[b]  && spaces[c] == "O") return a;
+            else if (!spaces[a]  && spaces[b] == "O" && !spaces[c]) return c;
+            else if(spaces[a] == "O" && !spaces[b] && !spaces[c]) return b;
             }
         return null;
     }
@@ -93,14 +147,14 @@ let level = 1;
 const computer = new Computer();
 
 levelSelect.addEventListener("change", (e) => {
-    
+    console.log(level);
     level = Number(e.target.value);
     
 });
 
 const startGame = () => {
     
-    let teste = boxes.forEach((box) => box.addEventListener("click", boxClicked));
+    boxes.forEach((box) => box.addEventListener("click", boxClicked));
 };
 
 function boxClicked(e) {
@@ -159,11 +213,11 @@ function playerHasWon(){
 
 
 
-function addPointsToWinner(){
-    if(currentPlayer === X_TEXT)
-    xPointsText.innerText = Number(xPointsText.innerText) + 1;
-else    oPointsText.innerText = Number(xPointsText.innerText) + 1;
-
+function addPointsToWinner() {
+    if (currentPlayer === X_TEXT)
+        xPointsText.innerText = Number(xPointsText.innerText) + 1;
+    else
+        oPointsText.innerText = Number(oPointsText.innerText) + 1;
 }
 
 function isDraw(){

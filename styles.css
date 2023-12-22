@@ -1,7 +1,11 @@
 body {
     font-family: 'Arial', sans-serif;
+<<<<<<< HEAD
       color: var(--blue);
    
+=======
+     color: var(--blue);
+>>>>>>> 104fc36f42f5e8238cdcec4c05defd3b053a667f
     background-color: #b4b4b4;
 }
 
@@ -99,9 +103,12 @@ footer {
     --winning-blocks: #83E509;
   }
   
+<<<<<<< HEAD
 
   
 
+=======
+>>>>>>> 104fc36f42f5e8238cdcec4c05defd3b053a667f
   
   .container {
     height: 100vh;
@@ -297,4 +304,7 @@ iframe {
 #knowledge-map p {
   color: #000000;
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 104fc36f42f5e8238cdcec4c05defd3b053a667f

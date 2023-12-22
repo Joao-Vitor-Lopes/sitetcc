@@ -1,6 +1,7 @@
 body {
     font-family: 'Arial', sans-serif;
- 
+      color: var(--blue);
+   
     background-color: #b4b4b4;
 }
 
@@ -29,6 +30,8 @@ header h1{
 h1 {
     margin: 0;
     font-size: 3vw;
+    text-transform: uppercase;
+    color: #fff;
 }
 
 h2, h3 {
@@ -60,6 +63,7 @@ section p{
 
 .social-media {
     margin-top: 2%;
+  
 }
 
 button {
@@ -70,6 +74,13 @@ button {
     border-radius: 1%;
     margin-right: 2%;
     cursor: pointer;
+    border-radius: 10px;
+    background-color: var(--blue);
+    border-color: var(--blue);
+    font-size: 1.2rem;
+    transition: 200ms transform;
+    font-weight: 600;
+    margin-top: 20px;
 }
 
 footer {
@@ -88,16 +99,9 @@ footer {
     --winning-blocks: #83E509;
   }
   
-  body {
-    color: var(--blue);
-    font-family: "Finger Paint", cursive;
-  }
+
   
-  h1 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    color: #fff;
-  }
+
   
   .container {
     height: 100vh;
@@ -160,18 +164,7 @@ footer {
     border-bottom: none;
   }
   
-  button {
-    padding: 10px 20px;
-    border-radius: 10px;
-    background-color: var(--blue);
-    color: #fff;
-    border-color: var(--blue);
-    font-size: 1.2rem;
-    transition: 200ms transform;
-    font-weight: 600;
-    margin-top: 20px;
- 
-  }
+  
   
   .mode-btn {
     padding: 10px 20px;
@@ -304,3 +297,4 @@ iframe {
 #knowledge-map p {
   color: #000000;
 }
+
